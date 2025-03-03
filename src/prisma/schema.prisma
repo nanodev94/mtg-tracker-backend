@@ -1,0 +1,170 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum UiMode {
+  AUTO
+  LIGHT
+  DARK
+}
+
+enum Rarity {
+  COMMON
+  UNCOMMON
+  RARE
+  MYTHIC
+}
+
+enum Color {
+  BLACK
+  WHITE
+  RED
+  BLUE
+  GREEN
+  COLORLESS
+}
+
+model Language {
+  code String @id @db.VarChar(2)
+  name String @db.VarChar(20)
+
+  users             User[]
+  cardInfoLanguages CardInfoLanguage[]
+
+  @@map("Languages")
+}
+
+model User {
+  id           Int      @id @default(autoincrement())
+  email        String   @unique @db.VarChar(150)
+  password     String   @db.VarChar(150)
+  uiMode       UiMode?  @default(AUTO) @map("ui_mode")
+  isBlocked    Boolean? @default(false) @map("is_blocked")
+  languageCode String   @map("language_code")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  language Language   @relation(fields: [languageCode], references: [code], onDelete: Cascade)
+  cards    UserCard[]
+
+  @@map("Users")
+}
+
+model Set {
+  id                  Int      @id @default(autoincrement())
+  code                String   @db.VarChar(20)
+  name                String   @db.VarChar(100)
+  isCommander         Boolean  @map("is_commander")
+  artCardsCount       Int      @map("art_cards_count")
+  tokenCardsCount     Int      @map("token_cards_count")
+  blackCardsCount     Int      @map("black_cards_count")
+  whiteCardsCount     Int      @map("white_cards_count")
+  redCardsCount       Int      @map("red_cards_count")
+  greenCardsCount     Int      @map("green_cards_count")
+  blueCardsCount      Int      @map("blue_cards_count")
+  colorlessCardsCount Int      @map("colorless_cards_count")
+  landCardsCount      Int      @map("land_cards_count")
+  commonCardsCount    Int      @map("common_cards_count")
+  uncommonCardsCount  Int      @map("uncommon_cards_count")
+  rareCardsCount      Int      @map("rare_cards_count")
+  mythicCardsCount    Int      @map("mythic_cards_count")
+  totalCards          Int      @map("total_cards")
+  extraCards          Int      @map("extra_cards")
+  releasedAt          DateTime @map("released_at")
+
+  cards Card[]
+
+  @@map("Sets")
+}
+
+model Card {
+  id               Int      @id @default(autoincrement())
+  setNumber        Int      @map("set_number")
+  colors           Color[]
+  mana             String?  @db.VarChar(100)
+  types            String[] @db.VarChar(100)
+  subtypes         String[] @db.VarChar(100)
+  rarity           Rarity?
+  isExtra          Boolean? @map("is_extra")
+  isPromo          Boolean? @map("is_promo")
+  isBundle         Boolean? @map("is_bundle")
+  isBuyABox        Boolean? @map("is_buy_a_box")
+  isStorySpotlight Boolean? @map("is_story_spotlight")
+  keywords         String[] @db.VarChar(100)
+  power            String?  @db.VarChar(5)
+  defense          String?  @db.VarChar(5)
+  loyalty          String?  @db.VarChar(5)
+  artist           String?  @db.VarChar(150)
+  copyright        String?  @db.VarChar(150)
+  treatments       String[] @db.VarChar(100)
+
+  setId Int @map("set_id")
+
+  set               Set                @relation(fields: [setId], references: [id], onDelete: Cascade)
+  cardInfoLanguages CardInfoLanguage[]
+  userCards         UserCard[]
+  cardAlternative   CardAlternative[]  @relation("cardAlternative")
+  cardAlternativeOf CardAlternative[]  @relation("cardAlternativeOf")
+  cardReprint       CardReprint[]      @relation("cardReprint")
+  cardReprintOf     CardReprint[]      @relation("cardReprintOf")
+
+  @@map("Cards")
+}
+
+model CardAlternative {
+  cardAlternativeId   Int @map("card_alternative_id")
+  cardAlternativeOfId Int @map("card_alternative_of_id")
+
+  cardAlternative   Card @relation("cardAlternative", fields: [cardAlternativeId], references: [id])
+  cardAlternativeOf Card @relation("cardAlternativeOf", fields: [cardAlternativeOfId], references: [id])
+
+  @@id([cardAlternativeId, cardAlternativeOfId])
+  @@map("CardAlternatives")
+}
+
+model CardReprint {
+  cardReprintId   Int @map("card_reprint_id")
+  cardReprintOfId Int @map("card_reprint_of_id")
+
+  cardReprint   Card @relation("cardReprint", fields: [cardReprintId], references: [id])
+  cardReprintOf Card @relation("cardReprintOf", fields: [cardReprintOfId], references: [id])
+
+  @@id([cardReprintId, cardReprintOfId])
+  @@map("CardReprints")
+}
+
+model CardInfoLanguage {
+  cardId       Int     @map("card_id")
+  languageCode String  @map("language_code")
+  name         String  @db.VarChar(150)
+  description  String? @db.VarChar(2000)
+  lore         String? @db.VarChar(2000)
+
+  language Language @relation(fields: [languageCode], references: [code], onDelete: Cascade)
+  card     Card     @relation(fields: [cardId], references: [id], onDelete: Cascade)
+
+  @@id([cardId, languageCode])
+  @@map("CardInfoLanguages")
+}
+
+model UserCard {
+  userId    Int    @map("user_id")
+  cardId    Int    @map("card_id")
+  treatment String
+  amount    Int
+
+  card Card @relation(fields: [cardId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, cardId, treatment])
+  @@map("UserCards")
+}

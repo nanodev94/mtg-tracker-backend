@@ -1,0 +1,97 @@
+{
+  "root": true,
+  "extends": ["eslint:recommended", "standard", "plugin:import/recommended", "prettier"],
+  "plugins": ["import", "simple-import-sort"],
+  "env": {
+    "node": true,
+    "browser": true
+  },
+  "settings": {
+    "ecmaVersion": "latest",
+    "import/resolver": {
+      "node": true,
+      "typescript": true
+    }
+  },
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "rules": {
+    // ESLint
+    "array-callback-return": ["error", { "checkForEach": true }],
+    "no-await-in-loop": "warn",
+    "no-self-compare": "warn",
+    "no-unmodified-loop-condition": "error",
+    "no-use-before-define": "error",
+    "default-case-last": "error",
+    "default-param-last": "off",
+    "eqeqeq": ["error", "always"],
+    "no-alert": "warn",
+    "no-console": "warn",
+    "no-else-return": "error",
+    "no-lonely-if": "error",
+    "no-multi-assign": "error",
+    "no-param-reassign": "error",
+    "no-unneeded-ternary": "warn",
+    "no-useless-concat": "warn",
+    "no-var": "error",
+    "object-shorthand": "warn",
+    "operator-assignment": "error",
+    "prefer-const": "error",
+    "prefer-template": "error",
+    "require-await": "error",
+    "yoda": "error",
+
+    // Import/Export
+    "import/first": "error",
+    "import/newline-after-import": ["error", { "count": 1 }],
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          // Packages `react` related packages come first.
+          ["^react", "^next", "^@?\\w"],
+          // Internal packages.
+          ["^(@|components)(/.*|$)"],
+          // Side effect imports.
+          ["^\\u0000"],
+          // Parent imports. Put `..` last.
+          ["^\\.\\.(?!/?$)", "^\\.\\./?$"],
+          // Other relative imports. Put same-folder imports and `.` last.
+          ["^\\./(?=.*/)(?!/?$)", "^\\.(?!/?$)", "^\\./?$"],
+          // Style imports.
+          ["^.+\\.?(css)$"]
+        ]
+      }
+    ],
+    "simple-import-sort/exports": "error"
+  },
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "extends": [
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/strict-type-checked",
+        "plugin:@typescript-eslint/stylistic",
+        "plugin:import/typescript"
+      ],
+      "plugins": ["@typescript-eslint"],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": true
+      },
+      "rules": {
+        "@typescript-eslint/consistent-type-exports": "error",
+        "@typescript-eslint/consistent-type-imports": "error",
+        "@typescript-eslint/default-param-last": "error",
+        "@typescript-eslint/no-useless-empty-export": "error",
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-floating-promises": "off",
+        "@typescript-eslint/no-misused-promises": "off",
+        "@typescript-eslint/ban-tslint-comment": "off"
+      }
+    }
+  ]
+}
