@@ -1,0 +1,33 @@
+version: '3.8'
+
+volumes:
+  postgres_data:
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: express_api
+    volumes:
+      - .:/app
+    ports:
+      - 3001:3001
+    depends_on:
+      - db
+    environment:
+      - FORCE_COLOR=1
+    restart: always
+
+  db:
+    image: postgres:16.2-alpine
+    container_name: postgres_db
+    attach: false
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    restart: always
