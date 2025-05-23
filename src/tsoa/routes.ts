@@ -451,6 +451,7 @@ const models: TsoaRoute.Models = {
             lore: { dataType: 'string' },
             description: { dataType: 'string' },
             name: { dataType: 'string', required: true },
+            setNumber: { dataType: 'double', required: true },
             setId: { dataType: 'double', required: true },
             id: { dataType: 'double', required: true },
           },
@@ -487,6 +488,7 @@ const models: TsoaRoute.Models = {
     properties: {
       id: { dataType: 'double', required: true },
       setId: { dataType: 'double', required: true },
+      setNumber: { dataType: 'double', required: true },
       name: { dataType: 'string', required: true },
       description: { dataType: 'string' },
       lore: { dataType: 'string' },
