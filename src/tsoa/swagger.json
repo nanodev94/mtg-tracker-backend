@@ -1,0 +1,2491 @@
+{
+	"openapi": "3.0.0",
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"_36_Enums.UiMode": {
+				"type": "string",
+				"enum": [
+					"AUTO",
+					"LIGHT",
+					"DARK"
+				]
+			},
+			"UiMode": {
+				"$ref": "#/components/schemas/_36_Enums.UiMode"
+			},
+			"PutUserDto": {
+				"properties": {
+					"languageCode": {
+						"type": "string"
+					},
+					"uiMode": {
+						"$ref": "#/components/schemas/UiMode"
+					}
+				},
+				"required": [
+					"languageCode",
+					"uiMode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"PutUserBody": {
+				"properties": {
+					"languageCode": {
+						"type": "string"
+					},
+					"uiMode": {
+						"$ref": "#/components/schemas/UiMode"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"PostRegisterDto": {
+				"properties": {
+					"id": {
+						"type": "number",
+						"format": "double"
+					},
+					"email": {
+						"type": "string"
+					},
+					"uiMode": {
+						"$ref": "#/components/schemas/UiMode"
+					},
+					"languageCode": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id",
+					"email",
+					"uiMode",
+					"languageCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"PostRegisterBody": {
+				"properties": {
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					},
+					"languageCode": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"email",
+					"password",
+					"languageCode"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"PostLoginDto": {
+				"properties": {
+					"id": {
+						"type": "number",
+						"format": "double"
+					},
+					"email": {
+						"type": "string"
+					},
+					"uiMode": {
+						"$ref": "#/components/schemas/UiMode"
+					},
+					"languageCode": {
+						"type": "string"
+					},
+					"token": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"id",
+					"email",
+					"uiMode",
+					"languageCode",
+					"token"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"PostLoginBody": {
+				"properties": {
+					"email": {
+						"type": "string"
+					},
+					"password": {
+						"type": "string"
+					}
+				},
+				"required": [
+					"email",
+					"password"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetUserCardsDto": {
+				"properties": {
+					"cards": {
+						"items": {
+							"properties": {
+								"amount": {
+									"type": "number",
+									"format": "double"
+								},
+								"treatment": {
+									"type": "string"
+								},
+								"cardId": {
+									"type": "number",
+									"format": "double"
+								}
+							},
+							"required": [
+								"amount",
+								"treatment",
+								"cardId"
+							],
+							"type": "object"
+						},
+						"type": "array"
+					},
+					"count": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"cards",
+					"count"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetUserCardsQueryParams": {
+				"properties": {
+					"setIds": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					},
+					"cardIds": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					},
+					"treatments": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"AddUserCardDto": {
+				"properties": {
+					"userId": {
+						"type": "number",
+						"format": "double"
+					},
+					"cardId": {
+						"type": "number",
+						"format": "double"
+					},
+					"treatment": {
+						"type": "string"
+					},
+					"amount": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"userId",
+					"cardId",
+					"treatment",
+					"amount"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"RemoveUserCardDto": {
+				"properties": {
+					"userId": {
+						"type": "number",
+						"format": "double"
+					},
+					"cardId": {
+						"type": "number",
+						"format": "double"
+					},
+					"treatment": {
+						"type": "string"
+					},
+					"amount": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"userId",
+					"cardId",
+					"treatment",
+					"amount"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetSetsWithProgressDto": {
+				"properties": {
+					"sets": {
+						"items": {
+							"properties": {
+								"progress": {
+									"type": "number",
+									"format": "double"
+								},
+								"releasedAt": {
+									"type": "string",
+									"format": "date-time"
+								},
+								"extraCards": {
+									"type": "number",
+									"format": "double"
+								},
+								"totalCards": {
+									"type": "number",
+									"format": "double"
+								},
+								"mythicCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"rareCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"uncommonCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"commonCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"landCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"colorlessCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"blueCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"greenCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"redCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"whiteCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"blackCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"tokenCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"artCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"isCommander": {
+									"type": "boolean"
+								},
+								"name": {
+									"type": "string"
+								},
+								"code": {
+									"type": "string"
+								},
+								"id": {
+									"type": "number",
+									"format": "double"
+								}
+							},
+							"required": [
+								"progress",
+								"releasedAt",
+								"extraCards",
+								"totalCards",
+								"mythicCardsCount",
+								"rareCardsCount",
+								"uncommonCardsCount",
+								"commonCardsCount",
+								"landCardsCount",
+								"colorlessCardsCount",
+								"blueCardsCount",
+								"greenCardsCount",
+								"redCardsCount",
+								"whiteCardsCount",
+								"blackCardsCount",
+								"tokenCardsCount",
+								"artCardsCount",
+								"isCommander",
+								"name",
+								"code",
+								"id"
+							],
+							"type": "object"
+						},
+						"type": "array"
+					},
+					"count": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"sets",
+					"count"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetSetsQueryParams": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"page": {
+						"type": "number",
+						"format": "double"
+					},
+					"resultsPerPage": {
+						"type": "number",
+						"format": "double"
+					},
+					"sortField": {
+						"type": "string"
+					},
+					"sortDir": {
+						"type": "string",
+						"enum": [
+							"ASC",
+							"DESC"
+						],
+						"nullable": false
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetSetsDto": {
+				"properties": {
+					"sets": {
+						"items": {
+							"properties": {
+								"releasedAt": {
+									"type": "string",
+									"format": "date-time"
+								},
+								"extraCards": {
+									"type": "number",
+									"format": "double"
+								},
+								"totalCards": {
+									"type": "number",
+									"format": "double"
+								},
+								"mythicCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"rareCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"uncommonCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"commonCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"landCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"colorlessCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"blueCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"greenCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"redCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"whiteCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"blackCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"tokenCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"artCardsCount": {
+									"type": "number",
+									"format": "double"
+								},
+								"isCommander": {
+									"type": "boolean"
+								},
+								"name": {
+									"type": "string"
+								},
+								"code": {
+									"type": "string"
+								},
+								"id": {
+									"type": "number",
+									"format": "double"
+								}
+							},
+							"required": [
+								"releasedAt",
+								"extraCards",
+								"totalCards",
+								"mythicCardsCount",
+								"rareCardsCount",
+								"uncommonCardsCount",
+								"commonCardsCount",
+								"landCardsCount",
+								"colorlessCardsCount",
+								"blueCardsCount",
+								"greenCardsCount",
+								"redCardsCount",
+								"whiteCardsCount",
+								"blackCardsCount",
+								"tokenCardsCount",
+								"artCardsCount",
+								"isCommander",
+								"name",
+								"code",
+								"id"
+							],
+							"type": "object"
+						},
+						"type": "array"
+					},
+					"count": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"sets",
+					"count"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetSetDto": {
+				"properties": {
+					"id": {
+						"type": "number",
+						"format": "double"
+					},
+					"code": {
+						"type": "string"
+					},
+					"name": {
+						"type": "string"
+					},
+					"isCommander": {
+						"type": "boolean"
+					},
+					"artCardsCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"tokenCardsCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"blackCardsCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"whiteCardsCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"redCardsCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"greenCardsCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"blueCardsCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"colorlessCardsCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"landCardsCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"commonCardsCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"uncommonCardsCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"rareCardsCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"mythicCardsCount": {
+						"type": "number",
+						"format": "double"
+					},
+					"totalCards": {
+						"type": "number",
+						"format": "double"
+					},
+					"extraCards": {
+						"type": "number",
+						"format": "double"
+					},
+					"releasedAt": {
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"required": [
+					"id",
+					"code",
+					"name",
+					"isCommander",
+					"artCardsCount",
+					"tokenCardsCount",
+					"blackCardsCount",
+					"whiteCardsCount",
+					"redCardsCount",
+					"greenCardsCount",
+					"blueCardsCount",
+					"colorlessCardsCount",
+					"landCardsCount",
+					"commonCardsCount",
+					"uncommonCardsCount",
+					"rareCardsCount",
+					"mythicCardsCount",
+					"totalCards",
+					"extraCards",
+					"releasedAt"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetArtistsDto": {
+				"properties": {
+					"artists": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"count": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"artists",
+					"count"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"_36_Enums.Color": {
+				"type": "string",
+				"enum": [
+					"BLACK",
+					"WHITE",
+					"RED",
+					"BLUE",
+					"GREEN",
+					"COLORLESS"
+				]
+			},
+			"Color": {
+				"$ref": "#/components/schemas/_36_Enums.Color"
+			},
+			"_36_Enums.Rarity": {
+				"type": "string",
+				"enum": [
+					"COMMON",
+					"UNCOMMON",
+					"RARE",
+					"MYTHIC"
+				]
+			},
+			"Rarity": {
+				"$ref": "#/components/schemas/_36_Enums.Rarity"
+			},
+			"GetArtistsQueryParams": {
+				"properties": {
+					"colors": {
+						"items": {
+							"$ref": "#/components/schemas/Color"
+						},
+						"type": "array"
+					},
+					"types": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"subtypes": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"rarities": {
+						"items": {
+							"$ref": "#/components/schemas/Rarity"
+						},
+						"type": "array"
+					},
+					"keywords": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"treatments": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"setIds": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetTypesDto": {
+				"properties": {
+					"types": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"count": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"types",
+					"count"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetTypesQueryParams": {
+				"properties": {
+					"colors": {
+						"items": {
+							"$ref": "#/components/schemas/Color"
+						},
+						"type": "array"
+					},
+					"subtypes": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"rarities": {
+						"items": {
+							"$ref": "#/components/schemas/Rarity"
+						},
+						"type": "array"
+					},
+					"keywords": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"artists": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"treatments": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"setIds": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetSubtypesDto": {
+				"properties": {
+					"subtypes": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"count": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"subtypes",
+					"count"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetSubtypesQueryParams": {
+				"properties": {
+					"colors": {
+						"items": {
+							"$ref": "#/components/schemas/Color"
+						},
+						"type": "array"
+					},
+					"types": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"rarities": {
+						"items": {
+							"$ref": "#/components/schemas/Rarity"
+						},
+						"type": "array"
+					},
+					"keywords": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"artists": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"treatments": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"setIds": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetKeywordsDto": {
+				"properties": {
+					"keywords": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"count": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"keywords",
+					"count"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetKeywordsQueryParams": {
+				"properties": {
+					"colors": {
+						"items": {
+							"$ref": "#/components/schemas/Color"
+						},
+						"type": "array"
+					},
+					"types": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"subtypes": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"rarities": {
+						"items": {
+							"$ref": "#/components/schemas/Rarity"
+						},
+						"type": "array"
+					},
+					"artists": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"treatments": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"setIds": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetTreatmentsDto": {
+				"properties": {
+					"treatments": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"count": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"treatments",
+					"count"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetTreatmentsQueryParams": {
+				"properties": {
+					"colors": {
+						"items": {
+							"$ref": "#/components/schemas/Color"
+						},
+						"type": "array"
+					},
+					"types": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"subtypes": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"rarities": {
+						"items": {
+							"$ref": "#/components/schemas/Rarity"
+						},
+						"type": "array"
+					},
+					"keywords": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"artists": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"setIds": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetCardsDto": {
+				"properties": {
+					"cards": {
+						"items": {
+							"properties": {
+								"alternatives": {
+									"items": {
+										"type": "number",
+										"format": "double"
+									},
+									"type": "array"
+								},
+								"treatments": {
+									"items": {
+										"type": "string"
+									},
+									"type": "array"
+								},
+								"copyright": {
+									"type": "string"
+								},
+								"artist": {
+									"type": "string"
+								},
+								"loyalty": {
+									"type": "string"
+								},
+								"defense": {
+									"type": "string"
+								},
+								"power": {
+									"type": "string"
+								},
+								"keywords": {
+									"items": {
+										"type": "string"
+									},
+									"type": "array"
+								},
+								"isStorySpotlight": {
+									"type": "boolean"
+								},
+								"isBuyABox": {
+									"type": "boolean"
+								},
+								"isBundle": {
+									"type": "boolean"
+								},
+								"isPromo": {
+									"type": "boolean"
+								},
+								"isExtra": {
+									"type": "boolean"
+								},
+								"rarity": {
+									"$ref": "#/components/schemas/Rarity"
+								},
+								"subtypes": {
+									"items": {
+										"type": "string"
+									},
+									"type": "array"
+								},
+								"types": {
+									"items": {
+										"type": "string"
+									},
+									"type": "array"
+								},
+								"mana": {
+									"type": "string"
+								},
+								"colors": {
+									"items": {
+										"$ref": "#/components/schemas/Color"
+									},
+									"type": "array"
+								},
+								"lore": {
+									"type": "string"
+								},
+								"description": {
+									"type": "string"
+								},
+								"name": {
+									"type": "string"
+								},
+								"setNumber": {
+									"type": "number",
+									"format": "double"
+								},
+								"setId": {
+									"type": "number",
+									"format": "double"
+								},
+								"id": {
+									"type": "number",
+									"format": "double"
+								}
+							},
+							"required": [
+								"name",
+								"setNumber",
+								"setId",
+								"id"
+							],
+							"type": "object"
+						},
+						"type": "array"
+					},
+					"count": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"cards",
+					"count"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetCardsQueryParams": {
+				"properties": {
+					"name": {
+						"type": "string"
+					},
+					"colors": {
+						"items": {
+							"$ref": "#/components/schemas/Color"
+						},
+						"type": "array"
+					},
+					"types": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"subtypes": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"rarities": {
+						"items": {
+							"$ref": "#/components/schemas/Rarity"
+						},
+						"type": "array"
+					},
+					"keywords": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"artists": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"treatments": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"setIds": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					},
+					"page": {
+						"type": "number",
+						"format": "double"
+					},
+					"resultsPerPage": {
+						"type": "number",
+						"format": "double"
+					},
+					"sortField": {
+						"type": "string"
+					},
+					"sortDir": {
+						"type": "string",
+						"enum": [
+							"ASC",
+							"DESC"
+						],
+						"nullable": false
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"GetCardDto": {
+				"properties": {
+					"id": {
+						"type": "number",
+						"format": "double"
+					},
+					"setId": {
+						"type": "number",
+						"format": "double"
+					},
+					"setNumber": {
+						"type": "number",
+						"format": "double"
+					},
+					"name": {
+						"type": "string"
+					},
+					"description": {
+						"type": "string"
+					},
+					"lore": {
+						"type": "string"
+					},
+					"colors": {
+						"items": {
+							"$ref": "#/components/schemas/Color"
+						},
+						"type": "array"
+					},
+					"mana": {
+						"type": "string"
+					},
+					"types": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"subtypes": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"rarity": {
+						"$ref": "#/components/schemas/Rarity"
+					},
+					"isExtra": {
+						"type": "boolean"
+					},
+					"isPromo": {
+						"type": "boolean"
+					},
+					"isBundle": {
+						"type": "boolean"
+					},
+					"isBuyABox": {
+						"type": "boolean"
+					},
+					"isStorySpotlight": {
+						"type": "boolean"
+					},
+					"keywords": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"power": {
+						"type": "string"
+					},
+					"defense": {
+						"type": "string"
+					},
+					"loyalty": {
+						"type": "string"
+					},
+					"artist": {
+						"type": "string"
+					},
+					"copyright": {
+						"type": "string"
+					},
+					"treatments": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array"
+					},
+					"alternatives": {
+						"items": {
+							"type": "number",
+							"format": "double"
+						},
+						"type": "array"
+					}
+				},
+				"required": [
+					"id",
+					"setId",
+					"setNumber",
+					"name"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {
+			"jwt": {
+				"type": "http",
+				"name": "Authorization",
+				"in": "header",
+				"scheme": "bearer",
+				"bearerFormat": "JWT"
+			}
+		}
+	},
+	"info": {
+		"title": "MTGTracker API",
+		"version": "1.0.0",
+		"description": "This is the description of the API for the MTGTracker app",
+		"license": {
+			"name": "ISC"
+		},
+		"contact": {}
+	},
+	"paths": {
+		"/users": {
+			"put": {
+				"operationId": "PutUser",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/PutUserDto"
+								}
+							}
+						}
+					}
+				},
+				"description": "Update user info",
+				"tags": [
+					"User"
+				],
+				"security": [
+					{
+						"jwt": []
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/PutUserBody"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/users/register": {
+			"post": {
+				"operationId": "PostRegister",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/PostRegisterDto"
+								}
+							}
+						}
+					}
+				},
+				"description": "Create account",
+				"tags": [
+					"User"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/PostRegisterBody"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/users/login": {
+			"post": {
+				"operationId": "PostLogin",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/PostLoginDto"
+								}
+							}
+						}
+					}
+				},
+				"description": "Check login",
+				"tags": [
+					"User"
+				],
+				"security": [],
+				"parameters": [],
+				"requestBody": {
+					"required": true,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/PostLoginBody"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/users/cards": {
+			"get": {
+				"operationId": "GetUserCards",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/GetUserCardsDto"
+								}
+							}
+						}
+					}
+				},
+				"description": "Get user collection",
+				"tags": [
+					"User"
+				],
+				"security": [
+					{
+						"jwt": []
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "setIds",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "number",
+								"format": "double"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "cardIds",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "number",
+								"format": "double"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "treatments",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					}
+				]
+			}
+		},
+		"/users/addCard/{cardId}/{treatment}": {
+			"put": {
+				"operationId": "AddUserCard",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/AddUserCardDto"
+								}
+							}
+						}
+					}
+				},
+				"description": "Add card to user collection",
+				"tags": [
+					"User"
+				],
+				"security": [
+					{
+						"jwt": []
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "cardId",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "path",
+						"name": "treatment",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/users/removeCard/{cardId}/{treatment}": {
+			"put": {
+				"operationId": "RemoveUserCard",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/RemoveUserCardDto"
+								}
+							}
+						}
+					}
+				},
+				"description": "Remove card from user collection",
+				"tags": [
+					"User"
+				],
+				"security": [
+					{
+						"jwt": []
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "cardId",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "path",
+						"name": "treatment",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/sets/withProgress": {
+			"get": {
+				"operationId": "GetSetsWithProgress",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/GetSetsWithProgressDto"
+								}
+							}
+						}
+					}
+				},
+				"description": "Get sets with progress by filters",
+				"tags": [
+					"Set"
+				],
+				"security": [
+					{
+						"jwt": []
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "name",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "page",
+						"required": false,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "resultsPerPage",
+						"required": false,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "sortField",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "sortDir",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"ASC",
+								"DESC"
+							]
+						}
+					}
+				]
+			}
+		},
+		"/sets": {
+			"get": {
+				"operationId": "GetSets",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/GetSetsDto"
+								}
+							}
+						}
+					}
+				},
+				"description": "Get sets by filters",
+				"tags": [
+					"Set"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "name",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "page",
+						"required": false,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "resultsPerPage",
+						"required": false,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "sortField",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "sortDir",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"ASC",
+								"DESC"
+							]
+						}
+					}
+				]
+			}
+		},
+		"/sets/{setId}": {
+			"get": {
+				"operationId": "GetSet",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/GetSetDto"
+								}
+							}
+						}
+					}
+				},
+				"description": "Get set by id",
+				"tags": [
+					"Set"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "setId",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			}
+		},
+		"/cards/artists": {
+			"get": {
+				"operationId": "GetArtists",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/GetArtistsDto"
+								}
+							}
+						}
+					}
+				},
+				"description": "Get list of artists by filters",
+				"tags": [
+					"Card"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "colors",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/components/schemas/Color"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "types",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "subtypes",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "rarities",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/components/schemas/Rarity"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "keywords",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "treatments",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "setIds",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "number",
+								"format": "double"
+							}
+						}
+					}
+				]
+			}
+		},
+		"/cards/types": {
+			"get": {
+				"operationId": "GetTypes",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/GetTypesDto"
+								}
+							}
+						}
+					}
+				},
+				"description": "Get list of types by filters",
+				"tags": [
+					"Card"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "colors",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/components/schemas/Color"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "subtypes",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "rarities",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/components/schemas/Rarity"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "keywords",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "artists",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "treatments",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "setIds",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "number",
+								"format": "double"
+							}
+						}
+					}
+				]
+			}
+		},
+		"/cards/subtypes": {
+			"get": {
+				"operationId": "GetSubtypes",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/GetSubtypesDto"
+								}
+							}
+						}
+					}
+				},
+				"description": "Get list of subtypes by filters",
+				"tags": [
+					"Card"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "colors",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/components/schemas/Color"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "types",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "rarities",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/components/schemas/Rarity"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "keywords",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "artists",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "treatments",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "setIds",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "number",
+								"format": "double"
+							}
+						}
+					}
+				]
+			}
+		},
+		"/cards/keywords": {
+			"get": {
+				"operationId": "GetKeywords",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/GetKeywordsDto"
+								}
+							}
+						}
+					}
+				},
+				"description": "Get list of keywords by filters",
+				"tags": [
+					"Card"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "colors",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/components/schemas/Color"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "types",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "subtypes",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "rarities",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/components/schemas/Rarity"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "artists",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "treatments",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "setIds",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "number",
+								"format": "double"
+							}
+						}
+					}
+				]
+			}
+		},
+		"/cards/treatments": {
+			"get": {
+				"operationId": "GetTreatments",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/GetTreatmentsDto"
+								}
+							}
+						}
+					}
+				},
+				"description": "Get list of treatments by filters",
+				"tags": [
+					"Card"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "colors",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/components/schemas/Color"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "types",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "subtypes",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "rarities",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/components/schemas/Rarity"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "keywords",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "artists",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "setIds",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "number",
+								"format": "double"
+							}
+						}
+					}
+				]
+			}
+		},
+		"/cards/{languageCode}": {
+			"get": {
+				"operationId": "GetCards",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/GetCardsDto"
+								}
+							}
+						}
+					}
+				},
+				"description": "Get cards by filters",
+				"tags": [
+					"Card"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "languageCode",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "name",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "colors",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/components/schemas/Color"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "types",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "subtypes",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "rarities",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/components/schemas/Rarity"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "keywords",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "artists",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "treatments",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "setIds",
+						"required": false,
+						"schema": {
+							"type": "array",
+							"items": {
+								"type": "number",
+								"format": "double"
+							}
+						}
+					},
+					{
+						"in": "query",
+						"name": "page",
+						"required": false,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "resultsPerPage",
+						"required": false,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					},
+					{
+						"in": "query",
+						"name": "sortField",
+						"required": false,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "sortDir",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"enum": [
+								"ASC",
+								"DESC"
+							]
+						}
+					}
+				]
+			}
+		},
+		"/cards/{languageCode}/{cardId}": {
+			"get": {
+				"operationId": "GetCard",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/GetCardDto"
+								}
+							}
+						}
+					}
+				},
+				"description": "Get card info by id",
+				"tags": [
+					"Card"
+				],
+				"security": [],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "languageCode",
+						"required": true,
+						"schema": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "path",
+						"name": "cardId",
+						"required": true,
+						"schema": {
+							"format": "double",
+							"type": "number"
+						}
+					}
+				]
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/api/v1"
+		}
+	]
+}

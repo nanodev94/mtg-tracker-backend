@@ -1,0 +1,32 @@
+{
+  "entryFile": "src/index.ts",
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "controllerPathGlobs": ["src/**/*.controller.ts"],
+  "spec": {
+    "name": "MTGTracker API",
+    "description": "This is the description of the API for the MTGTracker app",
+    "basePath": "/api/v1",
+    "outputDirectory": "src/tsoa",
+    "specVersion": 3,
+    "securityDefinitions": {
+      "jwt": {
+        "type": "http",
+        "name": "Authorization",
+        "in": "header",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "routes": {
+    "noWriteIfUnchanged": true,
+    "routesDir": "src/tsoa",
+    "basePath": "/api/v1",
+    "authenticationModule": "./src/authentication.ts"
+  },
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  }
+}
