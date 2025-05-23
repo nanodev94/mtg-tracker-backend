@@ -6,6 +6,7 @@ export interface GetCardsDto {
   cards: {
     id: number
     setId: number
+    setNumber: number
     name: string
     description?: string
     lore?: string

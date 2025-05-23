@@ -1092,6 +1092,10 @@
 								"name": {
 									"type": "string"
 								},
+								"setNumber": {
+									"type": "number",
+									"format": "double"
+								},
 								"setId": {
 									"type": "number",
 									"format": "double"
@@ -1103,6 +1107,7 @@
 							},
 							"required": [
 								"name",
+								"setNumber",
 								"setId",
 								"id"
 							],
@@ -1209,6 +1214,10 @@
 						"type": "number",
 						"format": "double"
 					},
+					"setNumber": {
+						"type": "number",
+						"format": "double"
+					},
 					"name": {
 						"type": "string"
 					},
@@ -1295,6 +1304,7 @@
 				"required": [
 					"id",
 					"setId",
+					"setNumber",
 					"name"
 				],
 				"type": "object",
