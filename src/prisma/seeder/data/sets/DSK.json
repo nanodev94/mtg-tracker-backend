@@ -136,7 +136,7 @@
     {
       "setNumber": 3,
       "colors": ["WHITE"],
-      "mana": "[3][WHITE]/[2][WHITE]",
+      "mana": "[3][WHITE]//[2][WHITE]",
       "name": {
         "en": "Dazzling Theater // Prop Room",
         "es": "Teatro deslumbrante // Sala de atrezo"
@@ -190,7 +190,7 @@
     {
       "setNumber": 4,
       "colors": ["WHITE"],
-      "mana": "[1][WHITE]/[4][WHITE][WHITE]",
+      "mana": "[1][WHITE]//[4][WHITE][WHITE]",
       "name": {
         "en": "Dollmaker's Shop // Porcelain Gallery",
         "es": "Tienda de muñecas // Galería de porcelana"
@@ -799,7 +799,7 @@
     {
       "setNumber": 15,
       "colors": ["WHITE"],
-      "mana": "[1][WHITE]/[2][WHITE]",
+      "mana": "[1][WHITE]//[2][WHITE]",
       "name": {
         "en": "Grand Entryway // Elegant Rotunda",
         "es": "Entrada lujosa // Rotonda elegante"
@@ -1558,7 +1558,7 @@
     {
       "setNumber": 34,
       "colors": ["WHITE"],
-      "mana": "[1][WHITE]/[3][WHITE]",
+      "mana": "[1][WHITE]//[3][WHITE]",
       "name": {
         "en": "Surgical Suite // Hospital Room",
         "es": "Quirófano // Habitación de hospital"
@@ -1872,7 +1872,7 @@
     {
       "setNumber": 43,
       "colors": ["BLUE"],
-      "mana": "[BLUE]/[4][BLUE]",
+      "mana": "[BLUE]//[4][BLUE]",
       "name": {
         "en": "Bottomless Pool // Locker Room",
         "es": "Piscina sin fondo // Vestuario"
@@ -1904,7 +1904,7 @@
     {
       "setNumber": 44,
       "colors": ["BLUE"],
-      "mana": "[3][BLUE]/[2][BLUE]",
+      "mana": "[3][BLUE]//[2][BLUE]",
       "name": {
         "en": "Central Elevator // Promising Stair",
         "es": "Ascensor central // Escaleras prometedoras"
@@ -2535,7 +2535,7 @@
     {
       "setNumber": 65,
       "colors": ["BLUE"],
-      "mana": "[2][BLUE]/[3][BLUE][BLUE]",
+      "mana": "[2][BLUE]//[3][BLUE][BLUE]",
       "name": {
         "en": "Meat Locker // Drowned Diner",
         "es": "Almacén de carne // Comedor inundado"
@@ -2582,7 +2582,7 @@
     {
       "setNumber": 67,
       "colors": ["BLUE"],
-      "mana": "[2][BLUE]/[5][BLUE][BLUE]",
+      "mana": "[2][BLUE]//[5][BLUE][BLUE]",
       "name": {
         "en": "Mirror Room // Fractured Realm",
         "es": "Sala de espejos // Reino fracturado"
@@ -2857,7 +2857,7 @@
     {
       "setNumber": 79,
       "colors": ["BLUE"],
-      "mana": "[BLUE]/[3][BLUE]",
+      "mana": "[BLUE]//[3][BLUE]",
       "name": {
         "en": "Underwater Tunnel // Slimy Aquarium",
         "es": "Túnel subacuático // Acuario viscoso"
@@ -3142,7 +3142,7 @@
     {
       "setNumber": 91,
       "colors": ["BLACK"],
-      "mana": "[3][BLACK]/[BLACK]",
+      "mana": "[3][BLACK]//[BLACK]",
       "name": {
         "en": "Defiled Crypt // Cadaver Lab",
         "es": "Cripta profanada // Laboratorio de cadáveres"
@@ -3185,7 +3185,7 @@
     {
       "setNumber": 93,
       "colors": ["BLACK"],
-      "mana": "[2][BLACK]/[3][BLACK]",
+      "mana": "[2][BLACK]//[3][BLACK]",
       "name": {
         "en": "Derelict Attic // Widow's Walk",
         "es": "Ático abandonado // Balcón mirador"
@@ -3354,7 +3354,7 @@
     {
       "setNumber": 100,
       "colors": ["BLACK"],
-      "mana": "[2][BLACK]/[6][BLACK][BLACK]",
+      "mana": "[2][BLACK]//[6][BLACK][BLACK]",
       "name": {
         "en": "Funeral Room // Awakening Hall",
         "es": "Sala del funeral // Salón del despertar"
@@ -3753,7 +3753,7 @@
     {
       "setNumber": 118,
       "colors": ["BLACK"],
-      "mana": "[2][BLACK]/[3][BLACK][BLACK]",
+      "mana": "[2][BLACK]//[3][BLACK][BLACK]",
       "name": {
         "en": "Unholy Annex // Ritual Chamber",
         "es": "Anexo impío // Cámara de rituales"
@@ -4013,7 +4013,7 @@
     {
       "setNumber": 129,
       "colors": ["RED"],
-      "mana": "[3][RED]/[4][RED][RED]",
+      "mana": "[3][RED]//[4][RED][RED]",
       "name": {
         "en": "Charred Foyer // Warped Space",
         "es": "Recibidor carbonizado // Espacio deformado"
@@ -4201,7 +4201,7 @@
     {
       "setNumber": 137,
       "colors": ["RED"],
-      "mana": "[2][RED]/[4][RED]",
+      "mana": "[2][RED]//[4][RED]",
       "name": {
         "en": "Glassworks // Shattered Yard",
         "es": "Cristalería // Patio resquebrajado"
@@ -4431,7 +4431,7 @@
     {
       "setNumber": 147,
       "colors": ["RED"],
-      "mana": "[2][RED]/[1][RED]",
+      "mana": "[2][RED]//[1][RED]",
       "name": {
         "en": "Painter's Studio // Defaced Gallery",
         "es": "Estudio de pintura // Galería vandalizada"
@@ -4700,7 +4700,7 @@
     {
       "setNumber": 158,
       "colors": ["RED"],
-      "mana": "[2][RED]/[4][RED][RED]",
+      "mana": "[2][RED]//[4][RED][RED]",
       "name": {
         "en": "Ticket Booth // Tunnel of Hate",
         "es": "Taquilla // Túnel del odio"
@@ -5248,7 +5248,7 @@
     {
       "setNumber": 181,
       "colors": ["GREEN"],
-      "mana": "[2][GREEN]/[3][GREEN]",
+      "mana": "[2][GREEN]//[3][GREEN]",
       "name": {
         "en": "Greenhouse // Rickety Gazebo",
         "es": "Invernadero // Cenador desvencijado"
@@ -5459,7 +5459,7 @@
     {
       "setNumber": 190,
       "colors": ["GREEN"],
-      "mana": "[2][GREEN]/[5][GREEN]",
+      "mana": "[2][GREEN]//[5][GREEN]",
       "name": {
         "en": "Moldering Gym // Weight Room",
         "es": "Gimnasio enmohecido // Sala de pesas"
@@ -5798,7 +5798,7 @@
     {
       "setNumber": 205,
       "colors": ["GREEN"],
-      "mana": "[2][GREEN]/[3][GREEN][GREEN]",
+      "mana": "[2][GREEN]//[3][GREEN][GREEN]",
       "name": {
         "en": "Walk-In Closet // Forgotten Cellar",
         "es": "Vestidor // Bodega olvidada"
@@ -6307,7 +6307,7 @@
     {
       "setNumber": 227,
       "colors": ["WHITE", "BLUE"],
-      "mana": "[2][WHITE][WHITE]/[5][BLUE][BLUE]",
+      "mana": "[2][WHITE][WHITE]//[5][BLUE][BLUE]",
       "name": {
         "en": "Restricted Office // Lecture Hall",
         "es": "Oficina restringida // Auditorio"
@@ -6370,7 +6370,7 @@
     {
       "setNumber": 230,
       "colors": ["RED", "BLUE"],
-      "mana": "[1][RED]/[3][BLUE][BLUE]",
+      "mana": "[1][RED]//[3][BLUE][BLUE]",
       "name": {
         "en": "Roaring Furnace // Steaming Sauna",
         "es": "Horno rugidor // Sauna vaporosa"
@@ -6487,7 +6487,7 @@
     {
       "setNumber": 235,
       "colors": ["RED", "BLUE"],
-      "mana": "[2][RED]/[3][BLUE]",
+      "mana": "[2][RED]//[3][BLUE]",
       "name": {
         "en": "Smoky Lounge // Misty Salon",
         "es": "Sala humeante // Salón brumoso"
@@ -7610,7 +7610,7 @@
     {
       "setNumber": 287,
       "colors": ["WHITE"],
-      "mana": "[1][WHITE]/[2][WHITE]",
+      "mana": "[1][WHITE]//[2][WHITE]",
       "name": {
         "en": "Grand Entryway // Elegant Rotunda",
         "es": "Entrada lujosa // Rotonda elegante"
@@ -8719,7 +8719,7 @@
     {
       "setNumber": 334,
       "colors": ["WHITE"],
-      "mana": "[3][WHITE]/[2][WHITE]",
+      "mana": "[3][WHITE]//[2][WHITE]",
       "name": {
         "en": "Dazzling Theater // Prop Room",
         "es": "Teatro deslumbrante // Sala de atrezo"
@@ -8741,7 +8741,7 @@
     {
       "setNumber": 335,
       "colors": ["WHITE"],
-      "mana": "[1][WHITE]/[4][WHITE][WHITE]",
+      "mana": "[1][WHITE]//[4][WHITE][WHITE]",
       "name": {
         "en": "Dollmaker's Shop // Porcelain Gallery",
         "es": "Tienda de muñecas // Galería de porcelana"
@@ -8762,7 +8762,7 @@
     {
       "setNumber": 336,
       "colors": ["BLUE"],
-      "mana": "[3][BLUE]/[2][BLUE]",
+      "mana": "[3][BLUE]//[2][BLUE]",
       "name": {
         "en": "Central Elevator // Promising Stair",
         "es": "Ascensor central // Escaleras prometedoras"
@@ -8784,7 +8784,7 @@
     {
       "setNumber": 337,
       "colors": ["BLUE"],
-      "mana": "[2][BLUE]/[5][BLUE][BLUE]",
+      "mana": "[2][BLUE]//[5][BLUE][BLUE]",
       "name": {
         "en": "Mirror Room // Fractured Realm",
         "es": "Sala de espejos // Reino fracturado"
@@ -8805,7 +8805,7 @@
     {
       "setNumber": 338,
       "colors": ["BLACK"],
-      "mana": "[2][BLACK]/[6][BLACK][BLACK]",
+      "mana": "[2][BLACK]//[6][BLACK][BLACK]",
       "name": {
         "en": "Funeral Room // Awakening Hall",
         "es": "Sala del funeral // Salón del despertar"
@@ -8826,7 +8826,7 @@
     {
       "setNumber": 339,
       "colors": ["BLACK"],
-      "mana": "[2][BLACK]/[3][BLACK][BLACK]",
+      "mana": "[2][BLACK]//[3][BLACK][BLACK]",
       "name": {
         "en": "Unholy Annex // Ritual Chamber",
         "es": "Anexo impío // Cámara de rituales"
@@ -8848,7 +8848,7 @@
     {
       "setNumber": 340,
       "colors": ["RED"],
-      "mana": "[3][RED]/[4][RED][RED]",
+      "mana": "[3][RED]//[4][RED][RED]",
       "name": {
         "en": "Charred Foyer // Warped Space",
         "es": "Recibidor carbonizado // Espacio deformado"
@@ -8870,7 +8870,7 @@
     {
       "setNumber": 341,
       "colors": ["GREEN"],
-      "mana": "[2][GREEN]/[3][GREEN][GREEN]",
+      "mana": "[2][GREEN]//[3][GREEN][GREEN]",
       "name": {
         "en": "Walk-In Closet // Forgotten Cellar",
         "es": "Vestidor // Bodega olvidada"
@@ -8892,7 +8892,7 @@
     {
       "setNumber": 342,
       "colors": ["WHITE", "BLUE"],
-      "mana": "[2][WHITE][WHITE]/[5][BLUE][BLUE]",
+      "mana": "[2][WHITE][WHITE]//[5][BLUE][BLUE]",
       "name": {
         "en": "Restricted Office // Lecture Hall",
         "es": "Oficina restringida // Auditorio"
@@ -8914,7 +8914,7 @@
     {
       "setNumber": 343,
       "colors": ["RED", "BLUE"],
-      "mana": "[1][RED]/[3][BLUE][BLUE]",
+      "mana": "[1][RED]//[3][BLUE][BLUE]",
       "name": {
         "en": "Roaring Furnace // Steaming Sauna",
         "es": "Horno rugidor // Sauna vaporosa"
